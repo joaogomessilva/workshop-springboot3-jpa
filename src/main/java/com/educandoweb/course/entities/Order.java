@@ -14,23 +14,19 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="tb_order")
-public class Order implements Serializable{
+public class Order implements Serializable {
 	
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private Instant monent;
-	
 	@ManyToOne
-	@JoinColumn(name="cient_id")
+	@JoinColumn(name="client_id")
 	private User client;
 	
-	public Order() {
+	public Order () {
 		
 	}
 
@@ -81,5 +77,6 @@ public class Order implements Serializable{
 		Order other = (Order) obj;
 		return Objects.equals(id, other.id);
 	}
+	
 
 }
