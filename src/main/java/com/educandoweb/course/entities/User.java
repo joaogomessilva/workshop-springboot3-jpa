@@ -29,7 +29,7 @@ public class User implements Serializable {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy="client")
-	private List<User> orders = new ArrayList<>();
+	private List<Order> orders = new ArrayList<>();
 	
 	public User() {
 		
@@ -101,7 +101,7 @@ public class User implements Serializable {
 		return Objects.equals(id, other.id);
 	}
 
-	public List<User> getOrders() {
+	public List<Order> getOrders() {
 		return orders;
 	}
 	
